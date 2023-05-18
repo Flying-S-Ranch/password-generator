@@ -2,15 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 
 // DATA
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 var numbers= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 var howLong;
 var isLowercase;
 var isUppercase;
 var isNumbers;
 var isSpecialChar;
+var emptyChar = [];
 
 //FUNCTIONS
 function userLength() {
@@ -23,19 +24,40 @@ if (howLong >=8 && howLong <=128) {
     userLength();
 }
 }
-
+  
 function chooseCharacters() {
-  let isLowercase = confirm("Would you like to include lowercase characters? Choose OK for yes and 'Cancel' for no.")
+
+  isLowercase = confirm("Would you like to include lowercase characters? Choose OK for yes and 'Cancel' for no.")
   console.log(isLowercase);
+
+  if (isLowercase) {
+    chosenChar = emptyChar.concat(lowercase);
+    console.log(chosenChar)
+  }
 
   let isUppercase = confirm("Would you like to include uppercase characters? Choose OK for yes and 'Cancel' for no.")
   console.log(isUppercase);
 
+  if (isUppercase) {
+    chosenChar = emptyChar.concat(uppercase);
+    console.log(chosenChar)
+  }
+
   let isNumber = confirm("Would you like to include numeral characters? Choose OK for yes and 'Cancel' for no.")
   console.log(isLowercase);
 
+  if (isNumbers) {
+    chosenChar = emptyChar.concat(numbers);
+    console.log(chosenChar)
+  }
+
   let isSpecialChar = confirm("Would you like to include special characters? Choose OK for yes and 'Cancel' for no.")
   console.log(isUppercase);
+
+  if (isSpecialChar) {
+    chosenChar = emptyChar.concat(specialChar);
+    console.log(chosenChar)
+  }
 }
 
 function generatePassword() {
