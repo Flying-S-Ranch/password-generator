@@ -7,18 +7,16 @@ const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 const numbers= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
-var charArrays = [lowercase, uppercase, numbers, specialChar];
-
 var howLong;
 
 var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChar'];
+var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
 
 // var isLowercase;
 // var isUppercase;
 // var isNumbers;
 // var isSpecialChar;
 var emptyChar = [];
-var chosenChar = [];
 
 
 
@@ -35,26 +33,60 @@ if (howLong >=8 && howLong <=128) {
 }
   
 function chooseCharacters() {
+  for(i = 0; i < isChar.length; i++) {
+    isChar[i] = confirm("Would you like to include " + whatChars[i] + "? Choose OK for yes and 'Cancel' for no.")
+    console.log(isChar[i]);
+  }
 
-  isChar[0] = confirm("Would you like to include lowercase characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isChar[0]);
+  if(!isChar[0] && !isChar[1] && !isChar[2] && !isChar[3] ) {
+    alert("Please choose at least one type of character for your password");
+    chooseCharacters();
+  }
+}
 
-  isChar[1] = confirm("Would you like to include uppercase characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isChar[1]);
-
-  isChar[2] = confirm("Would you like to include numeral characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isChar[2]);
-
-  isChar[3] = confirm("Would you like to include special characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isChar[3]);
-
-  // for (i=0; i<isChar.length; i++) {
-
-  // }
-
-  if(isChar[0]) {
-    chosenChar = emptyChar.concat(charArrays[0]);
-    console.log(chosenChar)
+function combineCharacters() {
+  if(isChar[0] && isChar[1] && isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, uppercase, numbers, specialChar);
+    console.log(userChars);
+  } else if(isChar[0] && isChar[1] && isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, uppercase, numbers);
+    console.log(userChars);
+  } else if(isChar[0] && isChar[1] && !isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, uppercase, specialChar);
+    console.log(userChars);
+  } else if(isChar[0] && !isChar[1] && isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, numbers, specialChar);
+    console.log(userChars);
+  } else if(!isChar[0] && isChar[1] && isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(uppercase, numbers, specialChar);
+    console.log(userChars);
+  } else if(isChar[0] && isChar[1] && !isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, uppercase,);
+    console.log(userChars);
+  } else if(isChar[0] && !isChar[1] && !isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, specialChar);
+    console.log(userChars);
+  } else if(!isChar[0] && !isChar[1] && isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(numbers, specialChar);
+    console.log(userChars);
+  } else if(isChar[0] && !isChar[1] && isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(lowercase, numbers);
+    console.log(userChars);
+  } else if(!isChar[0] && isChar[1] && !isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(uppercase, specialChar);
+    console.log(userChars);
+  } else if(isChar[0] && !isChar[1] && !isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(lowercase);
+    console.log(userChars);
+  } else if(!isChar[0] && isChar[1] && !isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(uppercase);
+    console.log(userChars);
+  } else if(!isChar[0] && !isChar[1] && isChar[2] && !isChar[3]) {
+    var userChars = emptyChar.concat(numbers);
+    console.log(userChars);
+  } else if(!isChar[0] && !isChar[1] && !isChar[2] && isChar[3]) {
+    var userChars = emptyChar.concat(specialChar);
+    console.log(userChars);
   }
 }
 
@@ -70,6 +102,7 @@ function generatePassword() {
   //Use chosen length and characters to make a password
     //Create an array with the chosen character sets
     //Create a for loop using the user's chosen lengths
+  combineCharacters();
 }
 
 // Write password to the #password input
