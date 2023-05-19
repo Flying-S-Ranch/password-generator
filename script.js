@@ -2,16 +2,25 @@
 var generateBtn = document.querySelector("#generate");
 
 // DATA
-var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-var numbers= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
+const lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
+const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+const numbers= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
+
+var charArrays = [lowercase, uppercase, numbers, specialChar];
+
 var howLong;
-var isLowercase;
-var isUppercase;
-var isNumbers;
-var isSpecialChar;
+
+var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChar'];
+
+// var isLowercase;
+// var isUppercase;
+// var isNumbers;
+// var isSpecialChar;
 var emptyChar = [];
+var chosenChar = [];
+
+
 
 //FUNCTIONS
 function userLength() {
@@ -27,35 +36,24 @@ if (howLong >=8 && howLong <=128) {
   
 function chooseCharacters() {
 
-  isLowercase = confirm("Would you like to include lowercase characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isLowercase);
+  isChar[0] = confirm("Would you like to include lowercase characters? Choose OK for yes and 'Cancel' for no.")
+  console.log(isChar[0]);
 
-  if (isLowercase) {
-    chosenChar = emptyChar.concat(lowercase);
-    console.log(chosenChar)
-  }
+  isChar[1] = confirm("Would you like to include uppercase characters? Choose OK for yes and 'Cancel' for no.")
+  console.log(isChar[1]);
 
-  let isUppercase = confirm("Would you like to include uppercase characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isUppercase);
+  isChar[2] = confirm("Would you like to include numeral characters? Choose OK for yes and 'Cancel' for no.")
+  console.log(isChar[2]);
 
-  if (isUppercase) {
-    chosenChar = emptyChar.concat(uppercase);
-    console.log(chosenChar)
-  }
+  isChar[3] = confirm("Would you like to include special characters? Choose OK for yes and 'Cancel' for no.")
+  console.log(isChar[3]);
 
-  let isNumber = confirm("Would you like to include numeral characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isLowercase);
+  // for (i=0; i<isChar.length; i++) {
 
-  if (isNumbers) {
-    chosenChar = emptyChar.concat(numbers);
-    console.log(chosenChar)
-  }
+  // }
 
-  let isSpecialChar = confirm("Would you like to include special characters? Choose OK for yes and 'Cancel' for no.")
-  console.log(isUppercase);
-
-  if (isSpecialChar) {
-    chosenChar = emptyChar.concat(specialChar);
+  if(isChar[0]) {
+    chosenChar = emptyChar.concat(charArrays[0]);
     console.log(chosenChar)
   }
 }
