@@ -17,6 +17,7 @@ var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
 // var isNumbers;
 // var isSpecialChar;
 var emptyChar = [];
+var passwordChars = [];
 
 
 
@@ -90,6 +91,15 @@ function combineCharacters() {
   }
 }
 
+function makePassword() {
+  for (i = 0; i <= howLong; i++) {
+  var passwordChar = userChars[Math.floor(Math.random()*userChars.length)];
+  passwordChars.push(passwordChar)
+  }
+  console.log(passwordChars);
+  let finalPassword = passwordChars.toString();
+}
+
 function generatePassword() {
   console.log("generating password");
   //Ask user how long they want their password to be
@@ -99,10 +109,13 @@ function generatePassword() {
   //Ask user what type of characters they want to use
     //Store user characters within a variable
   chooseCharacters();
+  
   //Use chosen length and characters to make a password
     //Create an array with the chosen character sets
-    //Create a for loop using the user's chosen lengths
   combineCharacters();
+
+  //Create a for loop using the user's chosen lengths
+  makePassword()
 }
 
 // Write password to the #password input
