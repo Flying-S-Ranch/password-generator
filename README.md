@@ -4,7 +4,17 @@
 This project creates a randomly generated password with the length and combination of characters chosen by the user. This project was built upon starter code and gave me the opportunity to practice many parts of JavaScript including for loops, arrays, and conditional statements. This project helps people create secure and unique passwords. You can access the webpage at https://flying-s-ranch.github.io/password-generator.
 
 # USAGE
-To begin, click the "Generate password" button. Follow the prompts to enter the number and type of characters you would like in your password. Your generated password will appear on the screen [Note: I have not yet completed this final step]
+To begin, click the "Generate password" button:
+<img src="./images/Screenshot 1.png">
+
+Follow the prompts to enter the number and type of characters you would like in your password:
+
+<img src="./images/Screenshot 2.png">
+<img src="./images/Screenshot 3.png">
+
+Your generated password will appear on the screen:
+
+<img src="./images/Screenshot 4.png">
 
 # CREDITS
 I received instruction on how to write prompt lines from W3 Schools in an article titled "Window prompt()". This article can be accessed here: https://www.w3schools.com/jsref/met_win_prompt.asp
@@ -12,6 +22,10 @@ I received instruction on how to write prompt lines from W3 Schools in an articl
 I received instruction on how to combine multiple arrays from an MDN web doc titled 'Array.prototype.concat()'. This article can be accessed here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 
 I received instruction on how to convert an array to a string from a w3 Schools article titled "JavaScript Array toString()" This article can be accessed here: https://w3schools.com/jsref/jsref_tostring_array.asp
+
+I learned how to generate a random number from the following article: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#examples
+
+I learned how to join items from the following article: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join 
 
 # LICENSE
 The MIT License (MIT)
