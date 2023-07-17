@@ -2,13 +2,20 @@
 var generateBtn = document.querySelector("#generate");
 
 // DATA / STATE
-var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
+// var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
+// var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+// var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
+
+var whatChars = [
+    {lowercase: "abcdefghijklmnopqrstuvwxyz".split("")},
+    {uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")},
+    {numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+    {specialChar: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")}
+]
 
 var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChar'];
-var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
+// var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
 
 var howLong;
 var charArray = [];
