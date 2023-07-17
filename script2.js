@@ -50,6 +50,20 @@ function getCharacters() {
       }
 }
 
+function generateCharacters () {
+    // for each place in the user-chosen length (userLength)
+    wordArray = [];
+    for (i = 0; i < howLong; i++) {
+        wordArray.push(i)
+    }
+    console.log(wordArray)
+    var password = wordArray.join("")
+    console.log(password)
+    // generate a random number according to the number of characters chosen by the user (charArray.length)
+    // return the character value corresponding to the generated random number 'r' (charArray[r])
+    // return full password
+}
+
 function generatePassword() {
     // determine the length of the password
     getUserLength()
