@@ -7,21 +7,40 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
-var howLong
+var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChar'];
+var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
+
+var howLong;
+var charArray = [];
 
 // FUNCTIONS
 // Write password to the #password input
-function userLength() {
+function getUserLength() {
     howLong = prompt("How many characters would you like in your password? Enter a number between 8 and 128");
     if (howLong >=8 && howLong <=128) {
         console.log(howLong)
+        return howLong
     } else {
         alert("Your password length was too long or too short. Please enter a number between 8 and 128");
         userLength();
     }
 }
 
-function generateCharacters() {
+function getCharacters() {
+    for(i = 0; i < isChar.length; i++) {
+        isChar[i] = confirm("Would you like to include " + whatChars[i] + "? Choose OK for yes and 'Cancel' for no.")
+        if (isChar[i]) {
+            console.log(whatChars[i]);
+        }
+      }
+    
+      if(!isChar[0] && !isChar[1] && !isChar[2] && !isChar[3] ) {
+        alert("Please choose at least one type of character for your password");
+        getCharacters();
+      }
+}
+
+function makeCharArray() {
     for(let i = 0; i < howLong + 1; i++) {
 
     }
@@ -29,8 +48,9 @@ function generateCharacters() {
 
 function generatePassword() {
     // determine the length of the password
-    userLength()
+    getUserLength()
     // determine the character types used in the password
+    getCharacters()
     // create an array of the selected character sets
     // fill in each character with the chosen characters array
     generateCharacters()
