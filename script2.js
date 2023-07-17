@@ -2,20 +2,20 @@
 var generateBtn = document.querySelector("#generate");
 
 // DATA / STATE
-// var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
-// var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-// var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
+var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
-var whatChars = [
-    {lowercase: "abcdefghijklmnopqrstuvwxyz".split("")},
-    {uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")},
-    {numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
-    {specialChar: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")}
+var characters = [
+    "abcdefghijklmnopqrstuvwxyz".split(""),
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 ]
 
-var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChar'];
-// var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
+var isChar = ['isLowercase', 'isUppercase', 'isNumbers', 'isSpecialChars'];
+var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
 
 var howLong;
 var charArray = [];
@@ -37,20 +37,17 @@ function getCharacters() {
     for(i = 0; i < isChar.length; i++) {
         isChar[i] = confirm("Would you like to include " + whatChars[i] + "? Choose OK for yes and 'Cancel' for no.")
         if (isChar[i]) {
-            console.log(whatChars[i]);
+            console.log(characters[i]);
+            charArray = charArray.concat(characters[i])
         }
       }
     
       if(!isChar[0] && !isChar[1] && !isChar[2] && !isChar[3] ) {
         alert("Please choose at least one type of character for your password");
         getCharacters();
+      } else {
+        console.log(charArray)
       }
-}
-
-function makeCharArray() {
-    for(let i = 0; i < howLong + 1; i++) {
-
-    }
 }
 
 function generatePassword() {
