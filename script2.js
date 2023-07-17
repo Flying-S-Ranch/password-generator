@@ -2,11 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 // DATA / STATE
-var lowercase = "abcdefghijklmnopqrstuvwxyz".split("")
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
-
 var characters = [
     "abcdefghijklmnopqrstuvwxyz".split(""),
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
@@ -74,6 +69,7 @@ function generatePassword() {
     getCharacters()
     // fill in each character with the chosen characters array
     generateCharacters()
+    charArray = [];
 }
 
 function writePassword() {
