@@ -19,6 +19,7 @@ var whatChars = ["lowercase", "uppercase", "numerals", "special characters"];
 
 var howLong;
 var charArray = [];
+var password
 
 // FUNCTIONS
 // Write password to the #password input
@@ -54,28 +55,29 @@ function generateCharacters () {
     // for each place in the user-chosen length (userLength)
     wordArray = [];
     for (i = 0; i < howLong; i++) {
-        wordArray.push(i)
+        // generate a random number according to the number of characters chosen by the user (charArray.length)
+        var random = Math.floor(Math.random()*charArray.length)
+        var newChar = charArray[random]
+        // return the character value corresponding to the generated random number 'r' (charArray[r])
+        wordArray.push(newChar)
     }
-    console.log(wordArray)
-    var password = wordArray.join("")
-    console.log(password)
-    // generate a random number according to the number of characters chosen by the user (charArray.length)
-    // return the character value corresponding to the generated random number 'r' (charArray[r])
     // return full password
+    password = wordArray.join("")
+    console.log(password)
 }
 
 function generatePassword() {
     // determine the length of the password
     getUserLength()
-    // determine the character types used in the password
-    getCharacters()
+    // determine the character types used in the password 
     // create an array of the selected character sets
+    getCharacters()
     // fill in each character with the chosen characters array
     generateCharacters()
 }
 
 function writePassword() {
-  var password = generatePassword();
+  generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
